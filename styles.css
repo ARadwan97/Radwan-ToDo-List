@@ -13,11 +13,11 @@ body {
 
 .app-container {
     display: grid;
-    grid-template-areas:
-        "clock-section button-panel"
-        "task-schedule task-schedule";
-    grid-gap: 20px;
-    background: #1e1e1e; /* Slightly lighter black for the container */
+    grid-template-columns: 30% 50% 20%;
+    height: 90vh;
+    width: 100%;
+    gap: 10px;
+    background: #1e1e1e;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -25,17 +25,30 @@ body {
 
 /* Clock Section */
 .clock-section {
-    grid-area: clock-section;
+    grid-column: 1 / span 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.digital-clock {
     text-align: center;
 }
 
-.digital-clock p {
-    margin: 5px 0;
+#date {
     font-size: 1.2rem;
+}
+
+#day {
+    font-size: 1rem;
     font-weight: bold;
+    color: red; /* Highlight for the current day */
+}
+
+#time {
+    font-size: 2rem;
+    margin: 10px 0;
 }
 
 .progress-circle {
@@ -60,11 +73,11 @@ body {
 }
 
 .progress-circle circle:first-child {
-    stroke: #444; /* Background stroke */
+    stroke: #444;
 }
 
 .progress-circle .progress {
-    stroke: #29b6f6; /* Highlight color */
+    stroke: #29b6f6;
     stroke-dasharray: 283;
     stroke-dashoffset: 75;
 }
@@ -78,40 +91,14 @@ body {
     font-weight: bold;
 }
 
-/* Button Panel */
-.button-panel {
-    grid-area: button-panel;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.btn {
-    background-color: #ff9800; /* Bright orange for buttons */
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #e68900; /* Darker orange on hover */
-}
-
 /* Task Schedule Section */
 .task-schedule {
-    grid-area: task-schedule;
-    display: flex;
-    flex-direction: column;
-    background: #292929; /* Darker gray for task section */
+    grid-column: 2 / span 1;
+    background: #292929;
     border-radius: 10px;
     padding: 15px;
     overflow-y: auto;
-    max-height: 400px;
+    max-height: 100%;
 }
 
 .task-schedule ul {
@@ -124,28 +111,38 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #3a3a3a; /* Medium gray for task items */
+    background: #3a3a3a;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 8px;
-    color: #ffffff; /* White text for tasks */
+    color: #ffffff;
     transition: background-color 0.3s ease;
-}
-
-.task-schedule li:hover {
-    background: #4caf50; /* Green highlight on hover */
-    color: #fff;
 }
 
 .task-time {
     font-weight: bold;
 }
 
-.mark-complete {
-    background-color: #4caf50;
+/* Button Panel */
+.button-panel {
+    grid-column: 3 / span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    background-color: #ff9800;
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
+    border-radius: 8px;
+    padding: 10px 15px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e68900;
 }
