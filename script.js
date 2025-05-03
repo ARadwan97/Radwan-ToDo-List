@@ -7,7 +7,7 @@ function updateClock() {
     document.getElementById('date').textContent = dateString;
 }
 
-// Progress Circle Animation (Example)
+// Progress Circle Animation
 function updateProgressCircle() {
     const now = new Date();
     const seconds = now.getSeconds();
