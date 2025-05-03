@@ -12,8 +12,8 @@
         <div class="clock-section">
             <div class="digital-clock">
                 <p id="date">2025/05/03</p>
-                <p id="time">08:15:33</p>
-                <p id="details">28°C | Sunny</p>
+                <p id="day" class="highlight">Saturday</p>
+                <p id="time">08:15:33 AM</p>
             </div>
             <div class="progress-circle">
                 <svg>
@@ -24,6 +24,21 @@
             </div>
         </div>
 
+        <!-- Task Schedule Section -->
+        <div class="task-schedule">
+            <ul>
+                <li>
+                    <div class="task-time">7:30-8:15</div>
+                    <div class="task-details">起床，洗漱</div>
+                </li>
+                <li>
+                    <div class="task-time">8:35-9:20</div>
+                    <div class="task-details">吃早餐</div>
+                </li>
+                <!-- Add more tasks as needed -->
+            </ul>
+        </div>
+
         <!-- Button Panel -->
         <div class="button-panel">
             <button class="btn">确认键</button>
@@ -31,23 +46,6 @@
             <button class="btn">闹钟键</button>
             <button class="btn">音量键</button>
             <button class="btn">开关键</button>
-        </div>
-
-        <!-- Task Schedule Section -->
-        <div class="task-schedule">
-            <ul>
-                <li>
-                    <div class="task-time">7:30-8:15</div>
-                    <div class="task-details">起床，洗漱</div>
-                    <button class="mark-complete">✔</button>
-                </li>
-                <li>
-                    <div class="task-time">8:35-9:20</div>
-                    <div class="task-details">吃早餐</div>
-                    <button class="mark-complete">✔</button>
-                </li>
-                <!-- Add more tasks as needed -->
-            </ul>
         </div>
     </div>
     <script src="script.js"></script>
